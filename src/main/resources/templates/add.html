@@ -1,0 +1,19 @@
+<!Doctype html>
+<html xmlns:th="http://www.thymelef.org">
+<head>
+    <title>Test</title>
+</head>
+<body style="text-align:center;;" >
+<h2>メンバー登録 </h2><br>
+<form name="form1" action="/list/member/add/newMember" method="post" style="padding:5%">
+    メンバー名 <input type="text" name ="name"><br>
+    ログインID <input type="number"  min="1" max="9999" name="id"><br>
+    権限<select name="status">
+    <option>boss</option>
+    <option>member</option>
+    </select><br>
+    パスワード <input type="text" name="pass"><br>
+    <input type="submit" value="登録"><br>
+</form>
+</body>
+</html>

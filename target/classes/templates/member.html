@@ -1,0 +1,21 @@
+<!Doctype html>
+<html xmlns:th="http://www.thymelef.org">
+<head>
+    <title>Test</title>
+</head>
+<body style="text-align:center; padding: 50px;">
+<h3>メンバー管理</h3><br>
+<input type="button" th:onclick="window.location.href='/list/member/add'" value="メンバー新規登録">
+<br><br><br>
+
+<div th:each="el : ${members}">
+    <form method="post" action="/chek">
+      <input type="text" th:value="${el.userId}" style="display:none;" name="id"/>
+      名前<input type="text" th:value="${el.name}" readonly>
+        <input type="submit" value="プロフィール見る">
+    </form>
+</div>
+<br>
+<input type="button" th:onclick="window.location.href='/list'" value="メニュー画面">
+</body>
+</html>

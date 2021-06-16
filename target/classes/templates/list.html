@@ -1,0 +1,44 @@
+<!Doctype html>
+<html xmlns:th="http://www.thymelef.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<div style=" width:100%; padding-left:45px; padding-top:45px; height:15%;">
+<form  action="/list" method="post" name="change" style="left:10%; position:absolute;">
+    <input name="chek" type="date" th:value="${timeNow}">
+    <input type="submit" value="一覧表示">
+</form>
+    <input type="button" th:onclick="window.location.href='/list/member'" value="メンバー管理"
+           style="position:absolute;right:45%;top:55px">
+
+<form action="/logout" method="post">
+    <input type="submit" value="ログアウト" style=" position:absolute;right:35%;top:55px;">
+</form>
+</div><br><br><br><br>
+<label style=" position:absolute;left:12.3%; font-size:22px;" th:text="${session.name}">  </label>
+<input type="button" th:onclick="window.location.href='/list/registWork'" value="スケジュール登録"
+style="position:absolute;left:22.3%; margin-top:2px;">
+<br><br><br><br><br>
+<div style="text-align:center;">
+<label style="position:absolute; left:22%">開始時</label>
+<label style="position:absolute; left:34%">終了時</label>
+<label style="position:absolute; left:49%">内容</label>
+<label style="position:absolute; left:60%">進捗率</label>
+<label style="position:absolute; left:73%">コメント</label>
+<br>
+午前<input type="text" th:value="${session.sTime}"readonly>
+<input type="text" th:value="${session.fTime}"readonly>
+<input type="text" th:value="${session.naiyo}"readonly>
+<input type="text" th:value="${session.work}"readonly>
+<input type="text" th:value="${session.coments}"readonly>
+<br><br>
+午後<input type="text" th:value="${session.sTime2}"readonly>
+<input type="text" th:value="${session.fTime2}"readonly>
+<input type="text" th:value="${session.naiyo2}"readonly>
+<input type="text" th:value="${session.work2}"readonly>
+<input type="text" th:value="${session.coments2}"readonly>
+ </div>
+
+</body>
+</html>

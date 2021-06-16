@@ -1,0 +1,57 @@
+<!Doctype html>
+<html xmlns:th="http://www.thymelef.org">
+<head>
+    <title>Test</title>
+</head>
+<body style="text-align:center; padding: 50px;">
+<label>スケジュール登録</label>
+<br><br><br><br>
+<label  th:text="'対象日:'+${session.time}" style="position:absolute; left:20%;"></label>
+<br><br><br><br>
+<label style="position:absolute; left:30%;   font-size:12px;">開始時</label>
+<label style="position:absolute; left:35.6%; font-size:12px;">終了時</label>
+<label style="position:absolute; left:45.9%; font-size:15px;"> 内容</label>
+<label style="position:absolute; left:53.6%; font-size:15px;"> 進捗率</label>
+<label style="position:absolute; left:62.9%; font-size:15px;">コメント</label>
+<br>
+<form  name="regform" method="post"　action="/list/registWork">
+<input  name="startTime1" type="time">
+<input name= "endTime1" type="time">
+<input name= "info1" type="text">
+<select name="end1">
+<option th:value="${session.work}" select hidden disable></option>
+<option>0%</option>
+<option>10%</option>
+<option>20%</option>
+<option>30%</option>
+<option>40%</option>
+<option>50%</option>
+<option>60%</option>
+<option>70%</option>
+<option>80%</option>
+<option>90%</option>
+<option>100%</option>
+</select>
+<input name="coment1" type="text"><br><br>
+<input name="startTime2" type="time">
+<input name="endTime2" type="time">
+<input name="info2" type="text">
+<select name="end2">
+<option th:value="${session.work}" select hidden disable></option>
+<option>0%</option>
+<option>10%</option>
+<option>20%</option>
+<option>30%</option>
+<option>40%</option>
+<option>50%</option>
+<option>60%</option>
+<option>70%</option>
+<option>80%</option>
+<option>90%</option>
+<option>100%</option>
+</select>
+<input name="coment2" type="text"><br>
+<input type="submit" value="登録">
+</form>
+</body>
+</html>

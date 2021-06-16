@@ -1,0 +1,29 @@
+<!Doctype html>
+<html xmlns:th="http://www.thymelef.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script type="text/javascript">
+    function Check() {
+    	var cc = document.loginform;
+    	if(!cc.login.value){
+    	  alert("ログインIDを入力してください。");
+    	  loginform.login.focus();
+    	  return false;
+    	}else if(!cc.pass.value){
+    		  alert("パスワードを入力してください。");
+    		  loginform.pass.focus();
+    		  return false;
+    		  }
+    	loginform.submit();
+    	}
+    </script>
+</head>
+<body style="text-align:center; padding: 50px;"  onsubmit="return Check();">
+<h2>スケジュール管理システム</h2>
+<form name="loginform" action="/" method="post" >
+    ログインID<input type="number" name="login"><br><br>
+    パスワード<input type ="text" name="pass"><br><br>
+<input type="submit" value="OK" >
+</form>
+</body>
+</html>
